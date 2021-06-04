@@ -7,10 +7,18 @@ categories = []
 draft = false
 +++
 
-hugo把markdown写的博客文章，转换成html静态网页。将这些静态网页推送到github pages，就可以轻松建立个人博客。现在的这篇文章就是这样生成的。
+hugo是一个工具，可以轻松的把markdown文章转换成静态网站。我们先用markdown写文章，再用hugo把markdown转成html，再推送到github的pages，一个博客就轻松建成了。
 
-查看hugo的文档到[这里](https://gohugo.io/getting-started/quick-start/)，可以快速了解hugo的使用。
+hugo的安装和使用参考[这里](https://gohugo.io/getting-started/quick-start/)，可以查看hugo的文档。
 
-hugo需要选用一个主题，这里使用的是[kiera](https://themes.gohugo.io/hugo-kiera/)。
+hugo有很多主题可以选用，比如这个[kiera](https://themes.gohugo.io/hugo-kiera/)。主题的使用，可以参考exampleSite目录下的示例。
 
-快速入门这个主题，可以查看kiera下的exampleSite目录，参考里面的示例来进行配置。
+## 配置build目录
+
+hugo默认把生成的html文件放到public目录下，我们可以在config.toml添加如下配置
+
+```
+publishDir = "docs"
+```
+
+那么hugo会把html文件生成到docs目录。你会发现这很有用。因为github pages使用根目录或者docs目录下的html，如果hugo生成的html不在这里，那么我们需要去手动拷贝。现在我们把hugo生成目录设为docs目录，再到github pages里面把默认目录也设为docs目录，那么就省去了拷贝的动作。
