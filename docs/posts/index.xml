@@ -7,10 +7,19 @@
    <generator>Hugo -- gohugo.io</generator>
    <language>zh-CN</language>
    <copyright>Copyright &amp;copy; 2021 - Kaimind</copyright>
-   <lastBuildDate>Mon, 29 Mar 2021 16:28:28 +0800</lastBuildDate>
+   <lastBuildDate>Fri, 04 Jun 2021 17:35:33 +0800</lastBuildDate>
    
        <atom:link href="https://blog.kaie.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
    
+   
+     <item>
+       <title>把图片直接插入到markdown文件中</title>
+       <link>https://blog.kaie.xyz/posts/markdown-pic/</link>
+       <pubDate>Fri, 04 Jun 2021 17:35:33 +0800</pubDate>
+       
+       <guid>https://blog.kaie.xyz/posts/markdown-pic/</guid>
+       <description>&lt;p&gt;在markdown中插入图片很简单，只需要添加图片的外部链接或路径就可以了。但这会有问题，比如，外部链接的图片消失的时候，那么我们的markdown文件也就无法正常显示图片了。再比如，当我们要拷贝一个markdown文件的时候，肯定会容易忘记去拷贝相应路径下的图片，这也会导致图片无法显示。这都是因为图片独立于markdown文件，而带来的问题。&lt;/p&gt;&lt;p&gt;有没用办法把图片直接插入到markdown文件中？方法是有的。我们可以把图片编码成base64代码，再插入到markdown文件中。&lt;/p&gt;&lt;p&gt;在markdown文件中，需要插入图片的位置：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;![pic][pic3355]&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在markdown文件的末尾，插入图片的base64编码：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;[pic3355]:data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA9AAAADNCAYA&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中pic3355是我们插入图片的文件名。&lt;/p&gt;&lt;p&gt;其中“iVBORw0K&amp;hellip;”这段看不懂的代码，是插入图片的base64编码。简单来说，就是把图片的二进制文件，用文本ascii码字符来编码。&lt;/p&gt;&lt;p&gt;如何获取图片文件的base64编码呢？我们用下面的python代码来获得。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;import base64with open(&#39;./pic3355.png&#39;,&#39;rb&#39;) as f:    bf = base64.b64encode(f.read())with open(&#39;./pic3355b.txt&#39;, &#39;w&#39;) as f:    f.write(str(bf))&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中pic3355.png是我们的图片文件及其路径。运行完这段python代码后，就可以到pic3355b.txt文件中拷贝出base64编码，插入到markdown文件了。&lt;/p&gt;</description>
+     </item>
    
      <item>
        <title>用hugo在github上建立个人博客</title>

@@ -5,7 +5,7 @@ theme = "kiera"
 copyright = "Copyright &copy; 2021 - Kaimind"
 canonifyurls = true
 paginate = 8
-summaryLength = 2
+summaryLength = 1
 pygmentsCodeFences = true
 publishDir = "docs"
 
