@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
    <title>Kaimind&#39;s blog</title>
-   <link>https://kaimind.github.io/</link>
+   <link>https://blog.kaie.xyz/</link>
    <description>Recent content on Kaimind&#39;s blog</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>zh-CN</language>
    <copyright>Copyright &amp;copy; 2021 - Kaimind</copyright>
    <lastBuildDate>Tue, 06 Apr 2021 10:35:36 +0800</lastBuildDate>
    
-       <atom:link href="https://kaimind.github.io/index.xml" rel="self" type="application/rss+xml" />
+       <atom:link href="https://blog.kaie.xyz/index.xml" rel="self" type="application/rss+xml" />
    
    
      <item>
        <title>用hugo在github上建立个人博客</title>
-       <link>https://kaimind.github.io/posts/hugo-github-pages/</link>
+       <link>https://blog.kaie.xyz/posts/hugo-github-pages/</link>
        <pubDate>Mon, 29 Mar 2021 16:28:28 +0800</pubDate>
        
-       <guid>https://kaimind.github.io/posts/hugo-github-pages/</guid>
+       <guid>https://blog.kaie.xyz/posts/hugo-github-pages/</guid>
        <description>&lt;p&gt;hugo把markdown写的博客文章，转换成html静态网页。将这些静态网页推送到github pages，就可以轻松建立个人博客。现在的这篇文章就是这样生成的。&lt;/p&gt;&lt;p&gt;查看hugo的文档到&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;这里&lt;/a&gt;，可以快速了解hugo的使用。&lt;/p&gt;&lt;p&gt;hugo需要选用一个主题，这里使用的是&lt;a href=&#34;https://themes.gohugo.io/hugo-kiera/&#34;&gt;kiera&lt;/a&gt;。&lt;/p&gt;&lt;p&gt;快速入门这个主题，可以查看kiera下的exampleSite目录，参考里面的示例来进行配置。&lt;/p&gt;</description>
      </item>
    

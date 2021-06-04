@@ -1,4 +1,4 @@
-baseURL = "https://kaimind.github.io/"
+baseURL = "https://blog.kaie.xyz/"
 languageCode = "zh-CN"
 title = "Kaimind's blog"
 theme = "kiera"
