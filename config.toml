@@ -1,0 +1,42 @@
+baseURL = "https://kaimind.github.io/"
+languageCode = "zh-CN"
+title = "Kaimind's blog"
+theme = "kiera"
+copyright = "Copyright &copy; 2021 - Kaimind"
+canonifyurls = true
+paginate = 8
+summaryLength = 2
+pygmentsCodeFences = true
+publishDir = "docs"
+
+[author]
+    name = "Kaimind"
+    github = "kaimind"
+
+[params]
+    tagline = "The best way to learn is to output! "
+
+[[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts"
+    weight = 1
+
+[[menu.main]]
+    identifier = "categories"
+    name = "分类"
+    url = "/categories"
+    weight = 2
+
+[[menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags"
+    weight = 3
+
+[[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about"
+    weight = 4
+    
