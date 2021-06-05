@@ -3,7 +3,7 @@ title = "把图片直接插入到markdown文件中"
 date = 2021-06-04T17:35:33+08:00
 images = []
 tags = ["markdown"]
-categories = []
+categories = ["编程"]
 draft = false
 +++
 

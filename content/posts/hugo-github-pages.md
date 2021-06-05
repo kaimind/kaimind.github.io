@@ -3,7 +3,7 @@ title = "用hugo在github上建立个人博客"
 date = 2021-03-29T16:28:28+08:00
 images = []
 tags = ["hugo", "markdown"]
-categories = []
+categories = ["编程"]
 draft = false
 +++
 
