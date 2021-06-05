@@ -1,15 +1,15 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
-   <title>markdown on Kaimind&#39;s blog</title>
-   <link>https://blog.kaie.xyz/tags/markdown/</link>
-   <description>Recent content in markdown on Kaimind&#39;s blog</description>
+   <title>linux on Kaimind&#39;s blog</title>
+   <link>https://blog.kaie.xyz/tags/linux/</link>
+   <description>Recent content in linux on Kaimind&#39;s blog</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>zh-CN</language>
    <copyright>Copyright &amp;copy; 2021 - Kaimind</copyright>
-   <lastBuildDate>Fri, 04 Jun 2021 17:35:33 +0800</lastBuildDate>
+   <lastBuildDate>Sat, 05 Jun 2021 10:15:02 +0800</lastBuildDate>
    
-       <atom:link href="https://blog.kaie.xyz/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+       <atom:link href="https://blog.kaie.xyz/tags/linux/index.xml" rel="self" type="application/rss+xml" />
    
    
      <item>
