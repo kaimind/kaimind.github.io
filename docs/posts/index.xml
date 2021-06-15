@@ -7,10 +7,19 @@
    <generator>Hugo -- gohugo.io</generator>
    <language>zh-CN</language>
    <copyright>Copyright &amp;copy; 2021 - Kaimind</copyright>
-   <lastBuildDate>Sat, 05 Jun 2021 10:15:02 +0800</lastBuildDate>
+   <lastBuildDate>Tue, 15 Jun 2021 11:37:06 +0800</lastBuildDate>
    
        <atom:link href="https://blog.kaie.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
    
+   
+     <item>
+       <title>Python开发环境</title>
+       <link>https://blog.kaie.xyz/posts/python-env/</link>
+       <pubDate>Tue, 15 Jun 2021 11:37:06 +0800</pubDate>
+       
+       <guid>https://blog.kaie.xyz/posts/python-env/</guid>
+       <description>&lt;h2 id=&#34;使用virtualenv管理python库&#34;&gt;使用virtualenv管理python库&lt;/h2&gt;&lt;p&gt;有人把python比作双筒猎枪，因为同时存在python2和python3两个不兼容的版本。python的库依赖也相当复杂，不同项目依赖不同的库，库与库之间往往不兼容。当项目需要不同的python版本，或者兼容不同的库的时候，就相当麻烦。virtualenv可以为项目建立独立的python环境，可以任意选择python的版本，安装不同的库，不会影响到系统环境和其他项目，很实用。&lt;/p&gt;&lt;pre&gt;&lt;code&gt;# 安装virtualenvpip install virtualenvcd project1virtualenv --system-site-packages -p /usr/bin/python3.7 py3env# --system-site-packages 继承系统环境的第三方包# -p 指定python版本# py3env 虚拟环境的名字source py3env/bin/activate# 激活虚拟环境# 激活后，该窗口下的python就是指定的版本，不管系统是什么版本# 该窗口下pip install安装的库也只影响到py3env虚拟环境# 其他虚拟环境和系统库都不受影响deactivate# 退出虚拟环境&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果命令窗口使用的是Powershell，用下面的命令激活virtualenv环境：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;cd env_path.\Scripts\activate&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果报错没有执行脚本的权限，可以&lt;a href=&#34;https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7&#34;&gt;参考这里&lt;/a&gt;&lt;/p&gt;&lt;p&gt;运行下面的命令，可以临时赋予该命令窗口执行签名脚本的权限：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;Set-ExecutionPolicy -Scope process RemoteSigned&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;另一种方法是，在启动Powershell的时候加上参数：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;powershell.exe -ExecutionPolicy RemoteSigned&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果命令窗口使用的是windows terminal，可以修改设置文件，在powershell.exe的命令后面，加上面的参数。&lt;/p&gt;&lt;h2 id=&#34;在vscode中配置python开发环境&#34;&gt;在VScode中配置Python开发环境&lt;/h2&gt;&lt;p&gt;Visual Studio Code是微软开发的代码编辑工具，相当简单好用。&lt;/p&gt;&lt;h3 id=&#34;安装插件&#34;&gt;安装插件&lt;/h3&gt;&lt;p&gt;打开VScode，点击左边四个小方块的图标，再搜索框输入python，排在第一位的是微软开发的python插件。选择并安装。&lt;/p&gt;&lt;h3 id=&#34;配置python路径&#34;&gt;配置python路径&lt;/h3&gt;&lt;p&gt;选择左下角的齿轮图标，然后Cammand Palette，输入“python select interpreter”回车，列出可用的python路径。选择想要的python路径。&lt;/p&gt;&lt;h3 id=&#34;启用virtualenv&#34;&gt;启用virtualenv&lt;/h3&gt;&lt;p&gt;如果使用virtualenv虚拟环境，那么上面选不到虚拟环境。先按照上面的步骤任选一个，会生成.vscode/settings.json文件，内容如下：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;{    &amp;quot;python.pythonPath&amp;quot;: &amp;quot;/path/bin/python&amp;quot;}&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;把python.pythonPath的值，配置成虚拟环境的路径就可以了。&lt;/p&gt;&lt;h3 id=&#34;调试&#34;&gt;调试&lt;/h3&gt;&lt;p&gt;选择一个python文件，点击右上角的开始按钮“Run python file in terminal”就开始运行python文件。&lt;/p&gt;&lt;p&gt;debug选择菜单debug，然后start dubugging就进入调试。&lt;/p&gt;&lt;p&gt;如果是flask应用，不能直接debug。按F5开始debug，选择Flask，再输入项目入口文件的路径。比如，项目文件夹是FlaskApp，入口文件是FlaskApp/src/run.py，那么要输入的路径是src/run.py。&lt;/p&gt;&lt;p&gt;dubug使用的是默认参数，访问路径是http://127.0.0.1:5000/ ，如果要改host为0.0.0.0的话，需要重新配置。在debug窗口下，左边的三角形run图标栏，显示的是No Configurations。点击选择Add Configuration，然后选择Flask，输入入口文件路径，就会自动生成.vscode/launch.json配置文件。在这个json配置文件中的args变量添加&amp;rdquo;&amp;ndash;host=0.0.0.0&amp;rdquo;。配置好后，再按F5开始debug。&lt;/p&gt;</description>
+     </item>
    
      <item>
        <title>可信任的时间戳</title>

@@ -4,7 +4,32 @@
   
   <url>
     <loc>https://blog.kaie.xyz/categories/</loc>
-    <lastmod>2021-06-05T10:15:02+08:00</lastmod>
+    <lastmod>2021-06-15T11:37:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaie.xyz/posts/</loc>
+    <lastmod>2021-06-15T11:37:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaie.xyz/tags/python/</loc>
+    <lastmod>2021-06-15T11:37:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaie.xyz/posts/python-env/</loc>
+    <lastmod>2021-06-15T11:37:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaie.xyz/tags/</loc>
+    <lastmod>2021-06-15T11:37:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaie.xyz/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2021-06-15T11:37:06+08:00</lastmod>
   </url>
   
   <url>
@@ -13,22 +38,7 @@
   </url>
   
   <url>
-    <loc>https://blog.kaie.xyz/posts/</loc>
-    <lastmod>2021-06-05T10:15:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.kaie.xyz/tags/</loc>
-    <lastmod>2021-06-05T10:15:02+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.kaie.xyz/posts/trusted-timestamp/</loc>
-    <lastmod>2021-06-05T10:15:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.kaie.xyz/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2021-06-05T10:15:02+08:00</lastmod>
   </url>
   

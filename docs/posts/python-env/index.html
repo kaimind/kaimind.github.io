@@ -1,0 +1,219 @@
+<!doctype html>
+
+<html lang="zh-CN">
+
+<head>
+  <title>Python开发环境 - Kaimind&#39;s blog</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="The HTML5 Herald" />
+<meta name="author" content="Kaimind" /><meta property="og:title" content="Python开发环境" />
+<meta property="og:description" content="使用virtualenv管理python库 有人把python比作双筒猎枪，因为同时存在python2和python3两个不兼容的版本。python的库依赖也相当复杂，不同项目依赖不同的库，库与库之间往往不兼容。当项目需要不同的python版本，或者兼容不同的库的时候，就相当麻烦。virtualenv可以为项目建立独立的python环境，可以任意选择python的版本，安装不同的库，不会影响到系统环境和其他项目，很实用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.kaie.xyz/posts/python-env/" />
+<meta property="article:published_time" content="2021-06-15T11:37:06+08:00" />
+<meta property="article:modified_time" content="2021-06-15T11:37:06+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python开发环境"/>
+<meta name="twitter:description" content="使用virtualenv管理python库 有人把python比作双筒猎枪，因为同时存在python2和python3两个不兼容的版本。python的库依赖也相当复杂，不同项目依赖不同的库，库与库之间往往不兼容。当项目需要不同的python版本，或者兼容不同的库的时候，就相当麻烦。virtualenv可以为项目建立独立的python环境，可以任意选择python的版本，安装不同的库，不会影响到系统环境和其他项目，很实用。"/>
+
+<meta name="generator" content="Hugo 0.68.3" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://blog.kaie.xyz/fontawesome/css/all.min.css" />
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  
+  
+  <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://blog.kaie.xyz/">Kaimind&rsquo;s blog</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/kaimind" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>The best way to learn is to output!</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://blog.kaie.xyz/posts">
+                <i class="fa-li fa  fa-lg"></i><span>文章</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://blog.kaie.xyz/categories">
+                <i class="fa-li fa  fa-lg"></i><span>分类</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://blog.kaie.xyz/tags">
+                <i class="fa-li fa  fa-lg"></i><span>标签</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://blog.kaie.xyz/about">
+                <i class="fa-li fa  fa-lg"></i><span>关于</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Python开发环境</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2021-06-15T11:37:06&#43;08:00">Jun 15, 2021</time>
+        </li>
+        
+        
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://blog.kaie.xyz/categories/%E7%BC%96%E7%A8%8B">编程</a>
+                
+            </em>
+        </li>
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://blog.kaie.xyz/tags/python">#python</a>
+                
+            </em>
+        </li>
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+<div class="featured_image">
+    <a href="https://blog.kaie.xyz/posts/python-env/" title="Python开发环境">
+        <img src="">
+    </a>
+</div>
+
+
+
+    <h2 id="使用virtualenv管理python库">使用virtualenv管理python库</h2>
+<p>有人把python比作双筒猎枪，因为同时存在python2和python3两个不兼容的版本。python的库依赖也相当复杂，不同项目依赖不同的库，库与库之间往往不兼容。当项目需要不同的python版本，或者兼容不同的库的时候，就相当麻烦。virtualenv可以为项目建立独立的python环境，可以任意选择python的版本，安装不同的库，不会影响到系统环境和其他项目，很实用。</p>
+<pre><code># 安装virtualenv
+pip install virtualenv
+
+cd project1
+virtualenv --system-site-packages -p /usr/bin/python3.7 py3env
+# --system-site-packages 继承系统环境的第三方包
+# -p 指定python版本
+# py3env 虚拟环境的名字
+
+source py3env/bin/activate
+# 激活虚拟环境
+# 激活后，该窗口下的python就是指定的版本，不管系统是什么版本
+# 该窗口下pip install安装的库也只影响到py3env虚拟环境
+# 其他虚拟环境和系统库都不受影响
+
+deactivate
+# 退出虚拟环境
+</code></pre><p>如果命令窗口使用的是Powershell，用下面的命令激活virtualenv环境：</p>
+<pre><code>cd env_path
+.\Scripts\activate
+</code></pre><p>如果报错没有执行脚本的权限，可以<a href="https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7">参考这里</a></p>
+<p>运行下面的命令，可以临时赋予该命令窗口执行签名脚本的权限：</p>
+<pre><code>Set-ExecutionPolicy -Scope process RemoteSigned
+</code></pre><p>另一种方法是，在启动Powershell的时候加上参数：</p>
+<pre><code>powershell.exe -ExecutionPolicy RemoteSigned
+</code></pre><p>如果命令窗口使用的是windows terminal，可以修改设置文件，在powershell.exe的命令后面，加上面的参数。</p>
+<h2 id="在vscode中配置python开发环境">在VScode中配置Python开发环境</h2>
+<p>Visual Studio Code是微软开发的代码编辑工具，相当简单好用。</p>
+<h3 id="安装插件">安装插件</h3>
+<p>打开VScode，点击左边四个小方块的图标，再搜索框输入python，排在第一位的是微软开发的python插件。选择并安装。</p>
+<h3 id="配置python路径">配置python路径</h3>
+<p>选择左下角的齿轮图标，然后Cammand Palette，输入“python select interpreter”回车，列出可用的python路径。选择想要的python路径。</p>
+<h3 id="启用virtualenv">启用virtualenv</h3>
+<p>如果使用virtualenv虚拟环境，那么上面选不到虚拟环境。先按照上面的步骤任选一个，会生成.vscode/settings.json文件，内容如下：</p>
+<pre><code>{
+    &quot;python.pythonPath&quot;: &quot;/path/bin/python&quot;
+}
+</code></pre><p>把python.pythonPath的值，配置成虚拟环境的路径就可以了。</p>
+<h3 id="调试">调试</h3>
+<p>选择一个python文件，点击右上角的开始按钮“Run python file in terminal”就开始运行python文件。</p>
+<p>debug选择菜单debug，然后start dubugging就进入调试。</p>
+<p>如果是flask应用，不能直接debug。按F5开始debug，选择Flask，再输入项目入口文件的路径。比如，项目文件夹是FlaskApp，入口文件是FlaskApp/src/run.py，那么要输入的路径是src/run.py。</p>
+<p>dubug使用的是默认参数，访问路径是http://127.0.0.1:5000/ ，如果要改host为0.0.0.0的话，需要重新配置。在debug窗口下，左边的三角形run图标栏，显示的是No Configurations。点击选择Add Configuration，然后选择Flask，输入入口文件路径，就会自动生成.vscode/launch.json配置文件。在这个json配置文件中的args变量添加&rdquo;&ndash;host=0.0.0.0&rdquo;。配置好后，再按F5开始debug。</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://blog.kaie.xyz/posts/trusted-timestamp/"><i class="fa fa-chevron-circle-left"></i> 可信任的时间戳</a>
+        </li>
+        
+        
+    </ul>
+</section>
+  
+    
+    
+  
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright © 2021 - Kaimind |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://blog.kaie.xyz/index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="https://blog.kaie.xyz/js/scripts.js"></script>
+
+
+</body>
+
+</html>
+
