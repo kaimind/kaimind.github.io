@@ -76,6 +76,14 @@ Visual Studio Code是微软开发的代码编辑工具，相当简单好用。
 }
 ```
 
+如果是window环境：
+
+```
+{
+    "python.pythonPath": "c:\\path\bin\python.exe"
+}
+```
+
 把python.pythonPath的值，配置成虚拟环境的路径就可以了。
 
 ### 调试
