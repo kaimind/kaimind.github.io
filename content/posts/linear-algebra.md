@@ -5,6 +5,7 @@ images = []
 tags = ["math"]
 categories = ["编程"]
 draft = false
+math = true
 +++
 
 ## 线性方程组
@@ -13,18 +14,18 @@ draft = false
 
 $
 \begin{cases}
- a_{11}x + a_{12}y = b_1\\
- a_{21}x + a_{22}y = b_2\\
+ a_{11}x + a_{12}y = b_1\\\\
+ a_{21}x + a_{22}y = b_2
 \end{cases}
 $
 
 用矩阵来表示线性方程组：
 
-$\left[\begin{matrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{matrix}\right]\left[\begin{matrix}x\\y\end{matrix}\right]=\left[\begin{matrix}b_1\\b_2\end{matrix}\right]$
+$\left[\begin{matrix}a_{11}&a_{12}\\\\a_{21}&a_{22}\end{matrix}\right]\left[\begin{matrix}x\\\\y\end{matrix}\right]=\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]$
 
 用向量来表示线性方程组：
 
-$x\left[\begin{matrix}a_{11}\\a_{21}\end{matrix}\right]+y\left[\begin{matrix}a_{12}\\a_{22}\end{matrix}\right]=\left[\begin{matrix}b_1\\b_2\end{matrix}\right]$
+$x\left[\begin{matrix}a_{11}\\\\a_{21}\end{matrix}\right]+y\left[\begin{matrix}a_{12}\\\\a_{22}\end{matrix}\right]=\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]$
 
 ## 向量的线性组合
 
@@ -34,58 +35,58 @@ $y=a_1x_1+a_2x_2$
 
 类似的
 
-$\left[\begin{matrix}b_1\\b_2\end{matrix}\right]=x\left[\begin{matrix}a_{11}\\a_{21}\end{matrix}\right]+y\left[\begin{matrix}a_{12}\\a_{22}\end{matrix}\right]$
+$\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]=x\left[\begin{matrix}a_{11}\\\\a_{21}\end{matrix}\right]+y\left[\begin{matrix}a_{12}\\\\a_{22}\end{matrix}\right]$
 
-我们称向量$\left[\begin{matrix}b_1\\b_2\end{matrix}\right]$是$\left[\begin{matrix}a_{11}\\a_{21}\end{matrix}\right]$和$\left[\begin{matrix}a_{12}\\a_{22}\end{matrix}\right]$的线性组合
+我们称向量$\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]$是$\left[\begin{matrix}a_{11}\\\\a_{21}\end{matrix}\right]$和$\left[\begin{matrix}a_{12}\\\\a_{22}\end{matrix}\right]$的线性组合
 
-现在我们代入两个特殊向量：$\left[\begin{matrix}1\\0\end{matrix}\right]$, $\left[\begin{matrix}0\\1\end{matrix}\right]$
+现在我们代入两个特殊向量：$\left[\begin{matrix}1\\\\0\end{matrix}\right]$, $\left[\begin{matrix}0\\\\1\end{matrix}\right]$
 
-$\left[\begin{matrix}b_1\\b_2\end{matrix}\right]=x\left[\begin{matrix}1\\0\end{matrix}\right]+y\left[\begin{matrix}0\\1\end{matrix}\right]=\left[\begin{matrix}x\\y\end{matrix}\right]$
+$\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]=x\left[\begin{matrix}1\\\\0\end{matrix}\right]+y\left[\begin{matrix}0\\\\1\end{matrix}\right]=\left[\begin{matrix}x\\\\y\end{matrix}\right]$
 
 把这个式子代入直角坐标系，直观的表示出来
 
 ![图1][p1]
 
-在这个直角坐标系中，向量$\left[\begin{matrix}1\\0\end{matrix}\right]$是x轴的单位向量，向量$\left[\begin{matrix}0\\1\end{matrix}\right]$是y轴的单位向量
+在这个直角坐标系中，向量$\left[\begin{matrix}1\\\\0\end{matrix}\right]$是x轴的单位向量，向量$\left[\begin{matrix}0\\\\1\end{matrix}\right]$是y轴的单位向量
 
-向量$\left[\begin{matrix}x\\y\end{matrix}\right]$就是x个x轴的单位向量，加上y个y轴的单位向量
+向量$\left[\begin{matrix}x\\\\y\end{matrix}\right]$就是x个x轴的单位向量，加上y个y轴的单位向量
 
-直角坐标系上的任何点（向量）$\left[\begin{matrix}x\\y\end{matrix}\right]$，都可以表示为基本向量$\left[\begin{matrix}1\\0\end{matrix}\right]$, $\left[\begin{matrix}0\\1\end{matrix}\right]$的线性组合
+直角坐标系上的任何点（向量）$\left[\begin{matrix}x\\\\y\end{matrix}\right]$，都可以表示为基本向量$\left[\begin{matrix}1\\\\0\end{matrix}\right]$, $\left[\begin{matrix}0\\\\1\end{matrix}\right]$的线性组合
 
 ## 矩阵乘法的几何意义
 
-我们用基本向量$\left[\begin{matrix}1\\0\end{matrix}\right]$和$\left[\begin{matrix}0\\1\end{matrix}\right]$的线性组合，来表示向量$\left[\begin{matrix}6\\6\end{matrix}\right]$
+我们用基本向量$\left[\begin{matrix}1\\\\0\end{matrix}\right]$和$\left[\begin{matrix}0\\\\1\end{matrix}\right]$的线性组合，来表示向量$\left[\begin{matrix}6\\\\6\end{matrix}\right]$
 
-$6\left[\begin{matrix}1\\0\end{matrix}\right]+6\left[\begin{matrix}0\\1\end{matrix}\right]=\left[\begin{matrix}6\\6\end{matrix}\right]$
+$6\left[\begin{matrix}1\\\\0\end{matrix}\right]+6\left[\begin{matrix}0\\\\1\end{matrix}\right]=\left[\begin{matrix}6\\\\6\end{matrix}\right]$
 
 用矩阵乘法表示
 
-$\left[\begin{matrix}1&0\\0&1\end{matrix}\right]\left[\begin{matrix}6\\6\end{matrix}\right]=\left[\begin{matrix}6\\6\end{matrix}\right]$
+$\left[\begin{matrix}1&0\\\\0&1\end{matrix}\right]\left[\begin{matrix}6\\\\6\end{matrix}\right]=\left[\begin{matrix}6\\\\6\end{matrix}\right]$
 
-现在我们把两个基本向量换成$\left[\begin{matrix}1\\2\end{matrix}\right]$, $\left[\begin{matrix}2\\1\end{matrix}\right]$
+现在我们把两个基本向量换成$\left[\begin{matrix}1\\\\2\end{matrix}\right]$, $\left[\begin{matrix}2\\\\1\end{matrix}\right]$
 
-$\left[\begin{matrix}1&2\\2&1\end{matrix}\right]\left[\begin{matrix}x\\y\end{matrix}\right]=\left[\begin{matrix}6\\6\end{matrix}\right]$
+$\left[\begin{matrix}1&2\\\\2&1\end{matrix}\right]\left[\begin{matrix}x\\\\y\end{matrix}\right]=\left[\begin{matrix}6\\\\6\end{matrix}\right]$
 
 这就是一个矩阵方程了，实际上也是线性方程组
 
 $
 \begin{cases}
- x + 2y = 6\\
- 2x + y = 6\\
+ x + 2y = 6\\\\
+ 2x + y = 6
 \end{cases}
 $
 
 求解
 
-$\left[\begin{matrix}1&2\\2&1\end{matrix}\right]\left[\begin{matrix}2\\2\end{matrix}\right]=\left[\begin{matrix}6\\6\end{matrix}\right]$
+$\left[\begin{matrix}1&2\\\\2&1\end{matrix}\right]\left[\begin{matrix}2\\\\2\end{matrix}\right]=\left[\begin{matrix}6\\\\6\end{matrix}\right]$
 
 我们把式子重新放到直角坐标系中进行观察
 
 ![图2][p2]
 
-如果我们以向量$\left[\begin{matrix}1\\2\end{matrix}\right]$, $\left[\begin{matrix}2\\1\end{matrix}\right]$为新的坐标轴，并以此为单位向量，形成一个新的坐标系
+如果我们以向量$\left[\begin{matrix}1\\\\2\end{matrix}\right]$, $\left[\begin{matrix}2\\\\1\end{matrix}\right]$为新的坐标轴，并以此为单位向量，形成一个新的坐标系
 
-那么，原本在直角坐标系中的向量$\left[\begin{matrix}6\\6\end{matrix}\right]$，在新的坐标系中就变成了$\left[\begin{matrix}2\\2\end{matrix}\right]$
+那么，原本在直角坐标系中的向量$\left[\begin{matrix}6\\\\6\end{matrix}\right]$，在新的坐标系中就变成了$\left[\begin{matrix}2\\\\2\end{matrix}\right]$
 
 由此可见，矩阵乘法
 
@@ -99,21 +100,21 @@ $Ax=b$
 
 比如下面的矩阵方程
 
-$\left[\begin{matrix}1&2\\2&4\end{matrix}\right]\left[\begin{matrix}x\\y\end{matrix}\right]=\left[\begin{matrix}6\\6\end{matrix}\right]$
+$\left[\begin{matrix}1&2\\\\2&4\end{matrix}\right]\left[\begin{matrix}x\\\\y\end{matrix}\right]=\left[\begin{matrix}6\\\\6\end{matrix}\right]$
 
 此方程无解。
 
-因为向量$\left[\begin{matrix}1\\2\end{matrix}\right]$, $\left[\begin{matrix}2\\4\end{matrix}\right]$在同一直线上，不能张成一个面，也就不能用该向量组的线性组合来表示直线以外的点$\left[\begin{matrix}6\\6\end{matrix}\right]$。
+因为向量$\left[\begin{matrix}1\\\\2\end{matrix}\right]$, $\left[\begin{matrix}2\\\\4\end{matrix}\right]$在同一直线上，不能张成一个面，也就不能用该向量组的线性组合来表示直线以外的点$\left[\begin{matrix}6\\\\6\end{matrix}\right]$。
 
-实际上$\left[\begin{matrix}1\\2\end{matrix}\right]=2\left[\begin{matrix}2\\4\end{matrix}\right]$，我们称向量$\left[\begin{matrix}1\\2\end{matrix}\right]$, $\left[\begin{matrix}2\\4\end{matrix}\right]$线性相关，在几何上表现为在同一直线上。
+实际上$\left[\begin{matrix}1\\\\2\end{matrix}\right]=2\left[\begin{matrix}2\\\\4\end{matrix}\right]$，我们称向量$\left[\begin{matrix}1\\\\2\end{matrix}\right]$, $\left[\begin{matrix}2\\\\4\end{matrix}\right]$线性相关，在几何上表现为在同一直线上。
 
 我们抽象一下
 
-$\left[\begin{matrix}a_1\\a_2\end{matrix}\right]=k\left[\begin{matrix}b_1\\b_2\end{matrix}\right]$
+$\left[\begin{matrix}a_1\\\\a_2\end{matrix}\right]=k\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]$
 
-如果k有值存在，向量$\left[\begin{matrix}a_1\\a_2\end{matrix}\right]$, $\left[\begin{matrix}b_1\\b_2\end{matrix}\right]$线性相关
+如果k有值存在，向量$\left[\begin{matrix}a_1\\\\a_2\end{matrix}\right]$, $\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]$线性相关
 
-如果k无值存在，向量$\left[\begin{matrix}a_1\\a_2\end{matrix}\right]$, $\left[\begin{matrix}b_1\\b_2\end{matrix}\right]$线性无关
+如果k无值存在，向量$\left[\begin{matrix}a_1\\\\a_2\end{matrix}\right]$, $\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]$线性无关
 
 ## 线性方程组的解
 
@@ -121,16 +122,16 @@ $\left[\begin{matrix}a_1\\a_2\end{matrix}\right]=k\left[\begin{matrix}b_1\\b_2\e
 
 $
 \begin{cases}
- a_{11}x + a_{12}y = b_1\\
- a_{21}x + a_{22}y = b_2\\
+ a_{11}x + a_{12}y = b_1\\\\
+ a_{21}x + a_{22}y = b_2
 \end{cases}
 $
 
 用矩阵来表示线性方程组：
 
-$\left[\begin{matrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{matrix}\right]\left[\begin{matrix}x\\y\end{matrix}\right]=\left[\begin{matrix}b_1\\b_2\end{matrix}\right]$
+$\left[\begin{matrix}a_{11}&a_{12}\\\\a_{21}&a_{22}\end{matrix}\right]\left[\begin{matrix}x\\\\y\end{matrix}\right]=\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]$
 
-设$a_1=\left[\begin{matrix}a_{11}\\a_{21}\end{matrix}\right]$, $a_2=\left[\begin{matrix}a_{21}\\a_{22}\end{matrix}\right]$, $b=\left[\begin{matrix}b_1\\b_2\end{matrix}\right]$
+设$a_1=\left[\begin{matrix}a_{11}\\\\a_{21}\end{matrix}\right]$, $a_2=\left[\begin{matrix}a_{21}\\\\a_{22}\end{matrix}\right]$, $b=\left[\begin{matrix}b_1\\\\b_2\end{matrix}\right]$
 
 - 如果$a_1$, $a_2$线性无关，线性方程组有唯一解
 - 如果$a_1$, $a_2$线性相关，且$a_1$, $a_2$, $b$在同一直线上，线性方程组有无限解
@@ -138,7 +139,7 @@ $\left[\begin{matrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{matrix}\right]\left[\begin
 
 特殊线性方程组
 
-$\left[\begin{matrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{matrix}\right]\left[\begin{matrix}x\\y\end{matrix}\right]=\left[\begin{matrix}0\\0\end{matrix}\right]$
+$\left[\begin{matrix}a_{11}&a_{12}\\\\a_{21}&a_{22}\end{matrix}\right]\left[\begin{matrix}x\\\\y\end{matrix}\right]=\left[\begin{matrix}0\\\\0\end{matrix}\right]$
 
 称为齐次线性方程组
 
