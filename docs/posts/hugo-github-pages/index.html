@@ -10,15 +10,16 @@
 <meta name="author" content="Kaimind" /><meta property="og:title" content="用hugo在github上建立个人博客" />
 <meta property="og:description" content="hugo是一个工具，可以轻松的把markdown文章转换成静态网站。我们先用markdown写文章，再用hugo把markdown转成html，再推送到github的pages，一个博客就轻松建成了。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.kaie.xyz/posts/hugo-github-pages/" />
+<meta property="og:url" content="https://blog.kaie.xyz/posts/hugo-github-pages/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-29T16:28:28+08:00" />
 <meta property="article:modified_time" content="2021-03-29T16:28:28+08:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用hugo在github上建立个人博客"/>
 <meta name="twitter:description" content="hugo是一个工具，可以轻松的把markdown文章转换成静态网站。我们先用markdown写文章，再用hugo把markdown转成html，再推送到github的pages，一个博客就轻松建成了。"/>
 
-<meta name="generator" content="Hugo 0.68.3" />
+<meta name="generator" content="Hugo 0.92.2" />
     
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
@@ -143,7 +144,7 @@
 <p>hugo有很多主题可以选用，比如这个<a href="https://themes.gohugo.io/hugo-kiera/">kiera</a>。主题的使用，可以参考exampleSite目录下的示例。</p>
 <h2 id="配置build目录">配置build目录</h2>
 <p>hugo默认把生成的html文件放到public目录下，我们可以在config.toml添加如下配置</p>
-<pre><code>publishDir = &quot;docs&quot;
+<pre tabindex="0"><code>publishDir = &quot;docs&quot;
 </code></pre><p>那么hugo会把html文件生成到docs目录。你会发现这很有用。因为github pages使用根目录或者docs目录下的html，如果hugo生成的html不在这里，那么我们需要去手动拷贝。现在我们把hugo生成目录设为docs目录，再到github pages里面把默认目录也设为docs目录，那么就省去了拷贝的动作。</p>
 
 
