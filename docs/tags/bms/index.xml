@@ -1,15 +1,15 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
  <channel>
-   <title>Posts on Kaimind&#39;s blog</title>
-   <link>https://blog.kaie.xyz/posts/</link>
-   <description>Recent content in Posts on Kaimind&#39;s blog</description>
+   <title>BMS on Kaimind&#39;s blog</title>
+   <link>https://blog.kaie.xyz/tags/bms/</link>
+   <description>Recent content in BMS on Kaimind&#39;s blog</description>
    <generator>Hugo -- gohugo.io</generator>
    <language>zh-CN</language>
    <copyright>Copyright &amp;copy; 2021 - Kaimind</copyright>
    <lastBuildDate>Mon, 08 May 2023 09:52:09 +0000</lastBuildDate>
    
-       <atom:link href="https://blog.kaie.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+       <atom:link href="https://blog.kaie.xyz/tags/bms/index.xml" rel="self" type="application/rss+xml" />
    
    
      <item>
