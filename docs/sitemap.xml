@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.kaie.xyz/</loc>
+    <lastmod>2023-05-15T08:05:28+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.kaie.xyz/posts/</loc>
+    <lastmod>2023-05-15T08:05:28+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.kaie.xyz/posts/lcd_transplant/</loc>
+    <lastmod>2023-05-15T08:05:28+00:00</lastmod>
+  </url><url>
     <loc>https://blog.kaie.xyz/categories/</loc>
     <lastmod>2023-05-13T02:51:22+00:00</lastmod>
   </url><url>
@@ -11,17 +20,23 @@
     <loc>https://blog.kaie.xyz/posts/fpga_program/</loc>
     <lastmod>2023-05-13T02:51:22+00:00</lastmod>
   </url><url>
-    <loc>https://blog.kaie.xyz/</loc>
-    <lastmod>2023-05-13T02:51:22+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.kaie.xyz/posts/</loc>
-    <lastmod>2023-05-13T02:51:22+00:00</lastmod>
-  </url><url>
     <loc>https://blog.kaie.xyz/tags/</loc>
     <lastmod>2023-05-13T02:51:22+00:00</lastmod>
   </url><url>
     <loc>https://blog.kaie.xyz/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2023-05-13T02:51:22+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.kaie.xyz/tags/winform/</loc>
+    <lastmod>2023-05-09T09:54:42+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.kaie.xyz/posts/winform_serialport/</loc>
+    <lastmod>2023-05-09T09:54:42+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.kaie.xyz/tags/%E4%B8%B2%E5%8F%A3/</loc>
+    <lastmod>2023-05-09T09:54:42+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.kaie.xyz/tags/%E6%96%AD%E5%B8%A7/</loc>
+    <lastmod>2023-05-09T09:54:42+00:00</lastmod>
   </url><url>
     <loc>https://blog.kaie.xyz/tags/bms/</loc>
     <lastmod>2023-05-08T09:52:09+00:00</lastmod>

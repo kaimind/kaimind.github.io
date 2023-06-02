@@ -1,13 +1,11 @@
-<!--
 +++
 title = "winform里面使用串口"
 date = 2023-05-09T09:54:42Z
 images = []
 tags = ["winform", "串口", "断帧"]
 categories = []
-draft = true
+draft = false
 +++
--->
 
 ## 前言
 
