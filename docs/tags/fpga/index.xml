@@ -13,6 +13,15 @@
    
    
      <item>
+       <title>Flash擦除均衡</title>
+       <link>https://blog.kaie.xyz/posts/flash_erase_blance/</link>
+       <pubDate>Tue, 20 Jun 2023 06:27:41 +0000</pubDate>
+       
+       <guid>https://blog.kaie.xyz/posts/flash_erase_blance/</guid>
+       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&lt;p&gt;在STM32开发中，需要保存一个计数值，并且希望它不被非法读取和修改。想把值保存到STM32的内部flash中，再用STM32的读保护把数据保护起来。读STM32的文档发现，内部flash寿命是有限制的，标称是写1万次。由于这个计数值改写比较频繁，如果只写1万次就把flash写坏的话，就太不经济了。网上说可以用空间换次数，使用擦除均衡来提高flash的寿命。本文在实现擦除均衡的同时，加入了自己的设计。&lt;/p&gt;&lt;h2 id=&#34;基本实现&#34;&gt;基本实现&lt;/h2&gt;&lt;p&gt;内部flash的特性是这样的，只能把1改写成0，而如果要把0重新改写成1的话，需要对一大块flash整体进行擦除操作。擦除的最小单位，有的是page，有的是sector，跟器件有关。我手上的器件，flash的最小擦除单位是sector，16Kbyte大小。如果我要存储一个16byte的值，可以把这个16byte写满整个16Kbyte的sector，再对这个sector进行擦除。那么，写1千次才能写满sector，才需要擦除一次。sector总共可以擦除1万次，那就可以实现写数据1千万次。对比eeprom的寿命才100万次，实现擦除均衡的flash是1千万次，反而超出了一个数量级，完全够用了。&lt;/p&gt;&lt;p&gt;实现擦除均衡的基本思路是这样的，如下图所示，0xff是flash擦除之后的样子，也就是没写过的干净区域；由标识头（0xaa55aa55）和标识尾（0x55aa55aa）包起来的是有效数据。0x00是已经被写过的脏数据区。当我们把整个sector写满一次之后，再对sector进行擦除操作。&lt;/p&gt;&lt;p&gt;读数据的时候，从头开始，读到标识头0xaa55aa55，表示有效数据开始。&lt;/p&gt;&lt;p&gt;写数据的时候，从头开始，找到0xff的干净区域进行写操作，再对旧数据进行清零。&lt;/p&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;......0x00000000, 0x00000000, 0x00000000, 0x000000000x00000000, 0x00000000, 0x00000000, 0x000000000xaa55aa55, 0x00000035, 0x00000036, 0x55aa55aa0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;&lt;p&gt;这样做的最大问题是读写速度慢。读一次数据，需要扫描整个sector，找出标识头0xaa55aa55的地方，才开始读有效数据。写一次数据，同样需要扫描整个sector，找出干净区域写新数据，再对旧数据清零。寿命扩大1千倍的同时，读写时间最大也可能被放大了1千倍。如果为了要保证数据准确，还可能多次扫描sector的数据。&lt;/p&gt;&lt;h2 id=&#34;新思路&#34;&gt;新思路&lt;/h2&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;......0xaa55aa55, 0x00000031, 0x00000032, 0x55aa55aa0xaa55aa55, 0x00000033, 0x00000034, 0x55aa55aa0xaa55aa55, 0x00000035, 0x00000036, 0x55aa55aa0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff0xffffffff, 0xffffffff, 0xffffffff, 0xffffffff&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;为了解决读写速度的问题，提出了新思路。新思路主要有以下几个要点：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;用一个变量存储有效数据的当前地址；&lt;/li&gt;&lt;li&gt;读数据的时候，从sector的尾部向前扫描，读到有效数据的时候就把当前地址存起来；&lt;/li&gt;&lt;li&gt;写数据的时候，从当前有效地址向sector的尾部方向扫描。&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;这样做有什么好处呢？&lt;/p&gt;&lt;ol&gt;&lt;li&gt;不用清零旧数据。因为写数据是从前往后写的，所以，读数据的时候从后往前读到的第一有标识头的数据就是最新的有效数据。旧数据不清零也不影响。&lt;/li&gt;&lt;li&gt;由于我们存了当前有效数据的地址，写的时候，只需要往后一步就可以命中干净数据区域进行写操作；读的时候只要往前一步就可以命中有效数据。读写数据速度提高。&lt;/li&gt;&lt;li&gt;提高数据的可靠度，是天然的数据回滚机制。如果我们读到一条数据记录，标识头和标识尾都是准确的，那么中间的数据就应该是准确的。如果我们读到一条数据记录，标识头正确而标识尾不正确，有可能是写数据的时候出错了。这时候怎么办呢？只需要往前再读一条数据记录，就是我们上一次保存的数据。这就相当于做了一次数据回滚。这是不清零旧数据的额外收益。&lt;/li&gt;&lt;/ol&gt;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;&lt;p&gt;在实现flash的擦除均衡的时候，改变一下数据读写策略，提高了数据读写速度，还额外实现了数据回滚机制。&lt;/p&gt;</description>
+     </item>
+   
+     <item>
        <title>手机屏幕替换方案介绍</title>
        <link>https://blog.kaie.xyz/posts/lcd_transplant/</link>
        <pubDate>Mon, 15 May 2023 08:05:28 +0000</pubDate>

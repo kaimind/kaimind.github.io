@@ -92,6 +92,59 @@
     
 
     <li class="first" >
+      <h1><a href="https://blog.kaie.xyz/posts/flash_erase_blance/" title="Flash擦除均衡">Flash擦除均衡</a></h1>
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2023-06-20T06:27:41Z">Jun 20, 2023</time>
+        </li>
+        
+        
+        <li>
+            Categories:
+            <em>
+                
+                    
+                    <a href="https://blog.kaie.xyz/categories/%E7%BC%96%E7%A8%8B">编程</a>
+                
+            </em>
+        </li>
+        
+
+        
+        <li>
+            <em>
+                
+                    
+                    <a href="https://blog.kaie.xyz/tags/stm32">#STM32</a>
+                
+                    , 
+                    <a href="https://blog.kaie.xyz/tags/flash">#FLASH</a>
+                
+            </em>
+        </li>
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
+
+      
+<div class="featured_image">
+    <a href="https://blog.kaie.xyz/posts/flash_erase_blance/" title="Flash擦除均衡">
+        <img src="">
+    </a>
+</div>
+
+
+      <p>前言 在STM32开发中，需要保存一个计数值，并且希望它不被非法读取和修改。想把值保存到STM32的内部flash中，再用STM32的读保护把数据保护起来。读STM32的文档发现，内部flash寿命是有限制的，标称是写1万次。由于这个计数值改写比较频繁，如果只写1万次就把flash写坏的话，就太不经济了。网上说可以用空间换次数，使用擦除均衡来提高flash的寿命。本文在实现擦除均衡的同时，加入了自己的设计。</p>
+      
+      <a href="https://blog.kaie.xyz/posts/flash_erase_blance/">Read more…</a>
+      
+    </li>
+    
+
+    <li >
       <h1><a href="https://blog.kaie.xyz/posts/lcd_transplant/" title="手机屏幕替换方案介绍">手机屏幕替换方案介绍</a></h1>
       <aside>
     <ul>
@@ -423,56 +476,6 @@
       <p>网络安全越来越重要，现在的浏览器，只要不是https访问，地址栏就会提示不安全。我们幸苦做了个网站，当然不希望被浏览器标记为不安全。网站要切换到https访问，首先需要有域名证书。购买域名证书并不便宜。好在Letsencrypt为我们提供了免费的域名证书申请。</p>
       
       <a href="https://blog.kaie.xyz/posts/letsencrypt-docker/">Read more…</a>
-      
-    </li>
-    
-
-    <li >
-      <h1><a href="https://blog.kaie.xyz/posts/python-env/" title="Python开发环境">Python开发环境</a></h1>
-      <aside>
-    <ul>
-        <li>
-            <time class="post-date" datetime="2021-06-15T11:37:06&#43;08:00">Jun 15, 2021</time>
-        </li>
-        
-        
-        <li>
-            Categories:
-            <em>
-                
-                    
-                    <a href="https://blog.kaie.xyz/categories/%E7%BC%96%E7%A8%8B">编程</a>
-                
-            </em>
-        </li>
-        
-
-        
-        <li>
-            <em>
-                
-                    
-                    <a href="https://blog.kaie.xyz/tags/python">#python</a>
-                
-            </em>
-        </li>
-        
-
-        <li>One minute read</li>
-    </ul>
-</aside>
-
-      
-<div class="featured_image">
-    <a href="https://blog.kaie.xyz/posts/python-env/" title="Python开发环境">
-        <img src="">
-    </a>
-</div>
-
-
-      <p>使用virtualenv管理python库 有人把python比作双筒猎枪，因为同时存在python2和python3两个不兼容的版本。python的库依赖也相当复杂，不同项目依赖不同的库，库与库之间往往不兼容。当项目需要不同的python版本，或者兼容不同的库的时候，就相当麻烦。virtualenv可以为项目建立独立的python环境，可以任意选择python的版本，安装不同的库，不会影响到系统环境和其他项目，很实用。</p>
-      
-      <a href="https://blog.kaie.xyz/posts/python-env/">Read more…</a>
       
     </li>
     
