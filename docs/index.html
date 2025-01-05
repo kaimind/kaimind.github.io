@@ -10,24 +10,24 @@
     <!-- Site Properties -->
     <title>Kaimind’s blog</title>
 
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/reset.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/site.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/site.css">
 
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/container.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/grid.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/header.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/image.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/menu.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/container.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/grid.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/header.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/image.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/menu.css">
 
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/divider.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/list.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/segment.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/dropdown.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic/components/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/divider.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/list.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/segment.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="https://blog.kaie.xyz/static/semantic/components/icon.css">
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script src="static/semantic/semantic.min.js"></script>
+    <script src="https://blog.kaie.xyz/static/semantic/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <style type="text/css">
@@ -112,7 +112,7 @@
             // console.log(window.location.host);
 
             $.ajax({
-                url: "static/article/" + hash + ".md",
+                url: "https://blog.kaie.xyz/static/article/" + hash + ".md",
                 success: function (result) {
                     document.getElementById('content').innerHTML =
                         marked.parse(result);
